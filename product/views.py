@@ -15,7 +15,11 @@ def index(request):
 
 def detail(request,product_id):
     product = Product.objects.get(id=product_id)
-    return HttpResponse(f"<h1>This is the page of {product.name} </h1>")
+    # return HttpResponse(f"<h1>This is the page of {product.name} </h1>")
+    context = {
+        'product' : product
+    }
+    return render(request,'show.html',context)
 
 def create(request):  
     if request.method == 'POST':        
