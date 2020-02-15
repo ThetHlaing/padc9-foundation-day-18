@@ -20,22 +20,21 @@
     <div class='container-fluid'>
         
         <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <a href="/product/create" class='btn btn-primary'>Create a new Product</a>
-                </div>
-                <div class="col-10">
+            <div class="row">                
+                <div class="col-12">
                     <div class="row">
                         {% for product in products %}
                         <div class='col-3'>
                             <div class="card" style="width: 18rem;">
+                                <img src="{{product.image.url}}"  class="card-img-top"  alt={{product.name}}/>
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.name}}</h5>
-                                    <p class="card-text">{{product.description}}
+                                    <p class="card-text">                                        
+                                        {{product.description}}
                                         <br/><br/>
                                         Price : {{product.price}} USD
                                     </p>
-                                    <a href="/product/{{product.id}}" class="btn btn-primary">Go somewhere</a>
+                                    <a href="/product/{{product.id}}" class="btn btn-primary">Buy Now</a>
                                 </div>
                             </div>
                         </div>

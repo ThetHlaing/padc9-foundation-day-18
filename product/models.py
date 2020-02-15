@@ -6,4 +6,5 @@ class Product(models.Model):
     description = models.CharField("Description",max_length=500)
     category = models.CharField("Category Name",max_length=50,default="")
     price = models.CharField("Price of the product",max_length=255,default="0")
+    image = models.ImageField(upload_to="images/",default=None)
     created_at = models.DateTimeField("Created Date") 
